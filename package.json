@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/loaders/contentShopping.js --exec babel-node",
+    "start": "nodemon src/app.js --exec babel-node",
     "start:debug": "nodemon src/app.js --inspect --exec babel-node",
     "sass:complie": "./node_modules/.bin/node-sass public/assets/css/main.scss public/assets/css/main.css",
     "sass:watch": "./node_modules/.bin/node-sass --watch public/assets/css/main.scss public/assets/css/main.css",
