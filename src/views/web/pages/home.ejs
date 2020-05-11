@@ -1,0 +1,34 @@
+<%- include('../layouts/head') %>
+
+<div class="container u-mgy-50">
+    <form enctype="multipart/form-data" method="POST" action="/process">
+        <% if (errors && errors.length) { %>
+            <div class="alert alert-danger" role="alert">
+                <% errors.forEach(error => { %>
+                    <p><%= error.message %></p>
+                <% }) %>
+            </div>
+        <% } %>
+
+        <div class="form-group">
+            <div class="form-group">
+                <label for="f-head-content">Chèn trong thẻ head</label>
+                <textarea class="form-control" id="f-head-content" name="headContent" rows="3"><%= oldInput.headContent %></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group">
+                <label for="f-files">Chọn file cần sửa</label>
+                <input type="file" class="form-control-file js-multiple-files" multiple name="html" id="f-files" accept="text/html">
+                <div class="js-show-files u-mgt-10"></div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Xử lý</button>
+    </form>
+</div>
+
+<%- include('../layouts/script') %>
+<script src="/assets/js/web/home.js"></script>
+<%- include('../layouts/foot') %>
